@@ -43,7 +43,7 @@ void select_menu_item(int input) {
       logic_sub_menu();
       break;
     case 2:
-
+      boolean_simplifier_sub_menu();
       break;
     case 3:
 
@@ -58,29 +58,19 @@ void select_menu_item(int input) {
 }
 
 void print_main_menu() {
-  std::cout << "\n----------- Main menu -----------\n";
-  std::cout << "|\t\t\t\t\t\t\t\t|\n";
-  std::cout << "|\t1. Logic Gates and Tools\t|\n";
-  std::cout << "|\t2. Insert Here\t\t\t\t|\n";
-  std::cout << "|\t3. Insert Here\t\t\t\t|\n";
-  std::cout << "|\t4. Exit\t\t\t\t\t\t|\n";
-  std::cout << "|\t\t\t\t\t\t\t\t|\n";
-  std::cout << "---------------------------------\n";
-}
-
-void go_back_to_main() {
-  std::string input;
-  do {
-    std::cout << "\nEnter 'b' or 'B' to go back to main menu: ";
-    std::cin >> input;
-  } while (input != "b" && input != "B");
-  main_menu();
+  std::cout << "\n--------------- Main menu ---------------\n";
+  std::cout << "|\t\t\t\t\t\t\t\t\t\t|\n";
+  std::cout << "|\t1. Logic Gates and Tools\t\t\t|\n";
+  std::cout << "|\t2. Boolean Expression Simplifier\t|\n";
+  std::cout << "|\t3. Insert Here\t\t\t\t\t\t|\n";
+  std::cout << "|\t4. Exit\t\t\t\t\t\t\t\t|\n";
+  std::cout << "|\t\t\t\t\t\t\t\t\t\t|\n";
+  std::cout << "-----------------------------------------\n";
 }
 
 void logic_sub_menu() {
   std::cout << "\n>> Logic Sub-Menu\n";
   logic_gate_menu();
-  go_back_to_main();
 }
 
 /*
@@ -91,10 +81,6 @@ void scott_sub_menu() {
 }
 */
 
-/*
-void pablo_sub_menu() {
-  std::cout << "\n>> Pablo Sub-Menu\n";
-  // function for sub menu
-  go_back_to_main();
+void boolean_simplifier_sub_menu() {
+  simplifyExpression();
 }
-*/

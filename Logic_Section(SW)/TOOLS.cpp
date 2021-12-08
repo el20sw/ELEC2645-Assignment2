@@ -1,5 +1,7 @@
 #include "TOOLS.h"
 
+
+// Function to get two boolean inputs
 void get_two_input(bool &inputA, bool &inputB) {
   std::string input1_string, input2_string;
   int input1, input2;
@@ -28,6 +30,7 @@ void get_two_input(bool &inputA, bool &inputB) {
   inputB = (bool)input2;
 }
 
+// Function to get boolean value for carry in
 void get_carry_in(bool &carry_in) {
   std::string carry_in_string;
   int carry_in_int;
@@ -45,6 +48,7 @@ void get_carry_in(bool &carry_in) {
   carry_in = (bool)carry_in_int;
 }
 
+// Function to simulate half-adder
 void half_adder(bool inputA, bool inputB, bool &sum, bool &carry_out) {
   LOGIC foo;
 
@@ -57,6 +61,7 @@ void half_adder(bool inputA, bool inputB, bool &sum, bool &carry_out) {
   carry_out = foo.get_outputAND();
 }
 
+// Function to simulate full-adder
 void full_adder(bool carry_in, bool inputA, bool inputB, bool &sum, bool &carry_out) {
   bool A_xor_B, A_and_B, temp;
 

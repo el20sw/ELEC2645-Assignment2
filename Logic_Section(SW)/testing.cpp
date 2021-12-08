@@ -1,5 +1,6 @@
 #include "testing.h"
 
+// ******************************************************************************
 //test AND gate
 bool test_AND(int a, int b, int expected) {
   LOGIC testAND;
@@ -28,6 +29,7 @@ int run_AND_tests() {
   return passed;
 }
 
+// ******************************************************************************
 //test OR gate
 bool test_OR(int a, int b, int expected) {
   LOGIC testOR;
@@ -56,6 +58,7 @@ int run_OR_tests() {
   return passed;
 }
 
+// ******************************************************************************
 //test XOR gate
 bool test_XOR(int a, int b, int expected) {
   LOGIC testXOR;
@@ -84,6 +87,7 @@ int run_XOR_tests() {
   return passed;
 }
 
+// ******************************************************************************
 //test NOR gate
 bool test_NOR(int a, int b, int expected) {
   LOGIC testNOR;
@@ -112,6 +116,7 @@ int run_NOR_tests() {
   return passed;
 }
 
+// ******************************************************************************
 //test XNOR gate
 bool test_XNOR(int a, int b, int expected) {
   LOGIC testXNOR;
@@ -140,6 +145,7 @@ int run_XNOR_tests() {
   return passed;
 }
 
+// ******************************************************************************
 //test NOT gate
 bool test_NOT(int a, int expected) {
   LOGIC testNOT;
@@ -166,6 +172,7 @@ int run_NOT_tests() {
   return passed;
 }
 
+// ******************************************************************************
 //test NAND gate
 bool test_NAND(int a, int b, int expected) {
   LOGIC testNAND;
@@ -194,6 +201,7 @@ int run_NAND_tests() {
   return passed;
 }
 
+// ******************************************************************************
 //test half_adder
 bool test_half_adder(bool a, bool b, bool expected_sum, bool expected_carry_out) {
   bool sum, carry_out;
@@ -220,6 +228,7 @@ int run_half_adder_tests() {
   return passed;
 }
 
+// ******************************************************************************
 //test full-adder
 bool test_full_adder(bool carry_in, bool a, bool b, bool expected_sum, bool expected_carry_out) {
   bool sum, carry_out;
@@ -250,6 +259,8 @@ int run_full_adder_tests() {
   return passed;
 }
 
+// ******************************************************************************
+// unite all tests in single function
 void run_tests() {
   std::cout << "\n>>> Logic Gate and Tool Testing <<<\n" << std::endl;
   run_AND_tests();

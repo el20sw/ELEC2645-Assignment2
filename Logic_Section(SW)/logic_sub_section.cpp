@@ -1,5 +1,6 @@
 #include "logic_sub_section.h"
 
+// Logic Gate Menu Function
 void logic_gate_menu() {
   do {
     choice_logic_tools = 0;
@@ -10,6 +11,7 @@ void logic_gate_menu() {
   } while (choice_logic != 10);
 }
 
+// Function to Print Logic Menu to Console
 void print_logic_menu() {
   std::cout << "\n----- Select a Logic Gate -----\n";
   std::cout << "|\t\t\t\t\t\t\t|\n";
@@ -27,6 +29,7 @@ void print_logic_menu() {
   std::cout << "-------------------------------\n";
 }
 
+// Function to get user menu selection - LOGIC main
 int logic_menu_selection() {
   int input;
   std::string input_string;
@@ -59,6 +62,7 @@ bool is_integer(std::string num) {
   return std::regex_match(num, std::regex("[+-]?[0-9]+"));
 }
 
+// Function to run selected menu functions
 void select_logic_menu_item(int input) {
   switch(input) {
     case 1:
@@ -95,6 +99,7 @@ void select_logic_menu_item(int input) {
   }
 }
 
+// Function to return to previous menu
 void go_back_to_logic_menu() {
   std::string input;
   do {
@@ -104,6 +109,7 @@ void go_back_to_logic_menu() {
   logic_gate_menu();
 }
 
+// AND Menu option
 void menu_AND() {
   std::cout << "\n>> AND Gate\n";
   LOGIC logic;
@@ -111,6 +117,7 @@ void menu_AND() {
   go_back_to_logic_menu();
 }
 
+// OR Menu option
 void menu_OR() {
   std::cout << "\n>> OR Gate\n";
   LOGIC logic;
@@ -118,6 +125,7 @@ void menu_OR() {
   go_back_to_logic_menu();
 }
 
+// XOR Menu option
 void menu_XOR() {
   std::cout << "\n>> XOR Gate\n";
   LOGIC logic;
@@ -125,6 +133,7 @@ void menu_XOR() {
   go_back_to_logic_menu();
 }
 
+// NOR Menu option
 void menu_NOR() {
   std::cout << "\n>> NOR Gate\n";
   LOGIC logic;
@@ -132,6 +141,7 @@ void menu_NOR() {
   go_back_to_logic_menu();
 }
 
+// XNOR Menu option
 void menu_XNOR() {
   std::cout << "\n>> XNOR Gate\n";
   LOGIC logic;
@@ -139,6 +149,7 @@ void menu_XNOR() {
   go_back_to_logic_menu();
 }
 
+// NOT Menu option
 void menu_NOT() {
   std::cout << "\n>> NOT Gate\n";
   LOGIC logic;
@@ -146,6 +157,7 @@ void menu_NOT() {
   go_back_to_logic_menu();
 }
 
+// NAND Menu option
 void menu_NAND() {
   std::cout << "\n>> NAND Gate\n";
   LOGIC logic;
@@ -153,6 +165,7 @@ void menu_NAND() {
   go_back_to_logic_menu();
 }
 
+// TOOLS Menu option
 void menu_TOOLS() {
   do {
     print_tools_menu();
@@ -162,11 +175,14 @@ void menu_TOOLS() {
   } while (choice_logic_tools != 3);
 }
 
+// Testing Menu option
 void menu_TESTS() {
   run_tests();
   go_back_to_logic_menu();
 }
 
+
+// Function to print TOOLS sub-menu
 void print_tools_menu() {
   std::cout << "\n------ Select a Logic Tool ------\n";
   std::cout << "|\t\t\t\t\t\t\t\t|\n";
@@ -177,6 +193,7 @@ void print_tools_menu() {
   std::cout << "---------------------------------\n";
 }
 
+// Function to get user menu selection - TOOLS sub-menu
 int tools_menu_selection() {
   int input;
   std::string input_string;
@@ -204,6 +221,7 @@ int tools_menu_selection() {
   return input;
 }
 
+// Function that returns user to TOOLS sub-menu
 void go_back_to_tools_menu() {
   std::string input;
   do {
@@ -213,6 +231,7 @@ void go_back_to_tools_menu() {
   menu_TOOLS();
 }
 
+// Function to run selected sub-menu functions
 void select_tool_item(int input) {
   switch(input) {
     case 1:
@@ -228,6 +247,7 @@ void select_tool_item(int input) {
   }
 }
 
+// Half-Adder Menu option
 void half_adder_tool() {
   bool inputA, inputB, sum, carry_out;
 
@@ -237,6 +257,7 @@ void half_adder_tool() {
   go_back_to_tools_menu();
 }
 
+// Full-Adder Menu option
 void full_adder_tool() {
   bool inputA, inputB, carry_in, sum, carry_out;
 
