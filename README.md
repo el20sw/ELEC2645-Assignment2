@@ -1,4 +1,4 @@
-# ELEC2645-Assignment2
+# ELEC2645 Assignment2
 
 - Final Build of ELEC2645 Assignment 2 Group Project
 - Technical Tool including:
