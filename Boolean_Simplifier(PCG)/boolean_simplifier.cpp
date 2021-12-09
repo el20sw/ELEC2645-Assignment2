@@ -1,31 +1,59 @@
 #include "boolean_simplifier.h"
 
+// function that calls appropriate function based on menu item selected
 void booleanSimplifierSubMenu (void) {
-  printSubMenu ();
-  std::cout << "\nSelected item: ";
-  std::string menuSelection;
-  std::cin >> menuSelection;
-
-  while (menuSelection != "1" and menuSelection != "2") {
-    std::cout << "\nInput error! Thisis not a valid menu item.\n";
-    std::cout << "\nSelected item: ";
-    std::cin >> menuSelection;
-  }
-
-  while (menuSelection == "1") {
+  std::string menuSelection;           // initialise variable
+  
+  menuSelection = selectMenuItem ();   // call function to input selection
+  
+  while (menuSelection != "3") {       // while exit not selected
     
+    if (menuSelection == "1") {        // call appropriate function
+      simplifyExpression ();
+    } else if (menuSelection == "2") {
+      runAllTests();
+    }
+    
+    menuSelection = selectMenuItem (); // ask for new item selection
   }
 }
 
 // ****************************************
 
+// function to display sub menu
 void printSubMenu (void) {
-  std::cout << "\n----- Boolean Expression Simplifier Menu -----\n";
+
+  
+  std::cout << "\n>> Boolean Expression Simplifier Sub-Menu\n";
+  std::cout << "\n----------- Select An Option ------------\n";
   std::cout << "|\t\t\t\t\t\t\t\t\t\t|\n";
-  std::cout << "|\t1. Boolean Expression Simplifier\t\t\t|\n";
-  std::cout << "|\t2. Exit\t\t\t\t\t\t\t\t|\n";
+  std::cout << "|\t1. Boolean Expression Simplifier\t|\n";
+  std::cout << "|\t2. Run All Tests\t\t\t\t\t|\n";
+  std::cout << "|\t3. Return to Main Menu\t\t\t\t|\n";
   std::cout << "|\t\t\t\t\t\t\t\t\t\t|\n";
   std::cout << "-----------------------------------------\n";
+  
+}
+
+// ****************************************
+
+// function to input and validate menu item selected
+std::string selectMenuItem (void) {
+  std::string menuSelection;   // initialise variable
+  
+  printSubMenu ();             // display menu
+  
+  std::cout << "\nSelected item: ";
+  std::cin >> menuSelection;   // input menu selection
+
+  // while input is not one of the possible selections, ask for a new input
+  while (menuSelection != "1" & menuSelection != "2" & menuSelection != "3") {
+    std::cout << "\nInput error! This is not a valid menu item.\n";
+    std::cout << "\nSelected item: ";
+    std::cin >> menuSelection;
+  }
+
+  return menuSelection;   // return selection
 }
 
 // ****************************************
@@ -33,47 +61,30 @@ void printSubMenu (void) {
 // main function
 void simplifyExpression (void) {
   
-  std::cout << "Welcome to the Boolean Expression Simplifier!\n";
+  std::cout << "\nWelcome to the Boolean Expression Simplifier!\n";
 
+  std::cout << "\nThis function simplifies boolean expressions such as '((a.!b)+1)' into '(a.!b)'.\n";
+  
   // initialise variables
-  std::string menuSelection = "1";
-	bool error;
+	bool error = true;      // error set to true to loop through program at least once
   std::string expression;
-
-  while (menuSelection == "1") {
-    
-    error = true;           // error set to true to loop through program at least once
-    
-    while (error) {         // while input is invalid, as for new input
-      std::cout << "\nPlease enter the boolean expression you would like to simplify: ";
-      std::cin >> expression;
-      error = validateExpression (expression);
-    }
-
-    // call function to simplify expression
-    std::string simplifiedExpression = iterativeSimplification (expression);
-    
-    if (simplifiedExpression == expression) {
-      std::cout << "\nThe expression " << expression << " can not be simplified any further.\n";
-    } else {
-      std::cout << "\nA simplified version of " << expression << " would be " << simplifiedExpression;
-    }
- /*
-    std::string input;
-    std::cout << "\n\nWould you like to simplify another expression? (Y/N): ";
-    std::cin >> input;
-
-    // while input is invalid, as for new input
-    while ((input != "Y" & input != "y") & (input != "N" & input != "n")) {
-      std::cout << "\nInput error!\n\nWould you like to simplify another expression? (Y/N): ";
-      std::cin >> input;
-    }
-
-    if (input == "N" | input == "n") {
-      repeat = false;      // exit program
-    }
-    */
+  
+  while (error) {         // while input is invalid, as for new input
+    std::cout << "\nPlease enter the boolean expression you would like to simplify: ";
+    std::cin >> expression;
+    error = validateExpression (expression);
   }
+
+  // call function to simplify expression
+  std::string simplifiedExpression = iterativeSimplification (expression);
+  
+  if (simplifiedExpression == expression) {
+    std::cout << "\nThe expression " << expression << " can not be simplified any further.\n";
+  } else {
+    std::cout << "\nA simplified version of " << expression << " would be " << simplifiedExpression << "\n";
+  }
+
+  std::cout << "\nReturning to the Boolean Expression Simplifier Menu...\n";
 }
 
 // ****************************************

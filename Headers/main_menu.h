@@ -14,6 +14,5 @@ void select_menu_item(int input);
 void print_main_menu();
 void logic_sub_menu();
 void boolean_simplifier_sub_menu();
-//void scott_sub_menu();
 
 #endif

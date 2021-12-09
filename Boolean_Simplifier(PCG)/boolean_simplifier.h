@@ -6,7 +6,13 @@
 #include <vector>
 #include <algorithm>
 
+#include "testing_simplifier.h"
+
 // delcaring functions
+void booleanSimplifierSubMenu (void);
+void printSubMenu (void);
+std::string selectMenuItem (void);
+
 void simplifyExpression (void);
 bool validateExpression (std::string);
 int countOccurences (std::string, std::string);

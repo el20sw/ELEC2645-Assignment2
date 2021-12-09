@@ -1,4 +1,4 @@
-#include "headers/main_menu.h"
+#include "Headers/main_menu.h"
 
 void main_menu() {
   do {
@@ -7,14 +7,14 @@ void main_menu() {
     int input = get_user_input();
     choice_main = input;
     select_menu_item(input);
-  } while (choice_main != 4);
+  } while (choice_main != 3);
 }
 
 int get_user_input() {
   int input;
   std::string input_string;
   bool valid_input = false;
-  int menu_items = 4;
+  int menu_items = 3;
 
   do {
     std::cout << "\nSelect item: ";
@@ -46,9 +46,6 @@ void select_menu_item(int input) {
       boolean_simplifier_sub_menu();
       break;
     case 3:
-
-      break;
-    case 4:
       exit(1);
       break;
     default:
@@ -58,29 +55,20 @@ void select_menu_item(int input) {
 }
 
 void print_main_menu() {
-  std::cout << "\n--------------- Main menu ---------------\n";
+  std::cout << "\n>> Main Menu\n";
+  std::cout << "\n----------- Select An Option ------------\n";
   std::cout << "|\t\t\t\t\t\t\t\t\t\t|\n";
   std::cout << "|\t1. Logic Gates and Tools\t\t\t|\n";
   std::cout << "|\t2. Boolean Expression Simplifier\t|\n";
-  std::cout << "|\t3. Insert Here\t\t\t\t\t\t|\n";
-  std::cout << "|\t4. Exit\t\t\t\t\t\t\t\t|\n";
+  std::cout << "|\t3. Exit Program\t\t\t\t\t\t|\n";
   std::cout << "|\t\t\t\t\t\t\t\t\t\t|\n";
   std::cout << "-----------------------------------------\n";
 }
 
 void logic_sub_menu() {
-  std::cout << "\n>> Logic Sub-Menu\n";
   logic_gate_menu();
 }
 
-/*
-void scott_sub_menu() {
-  std::cout << "\n>> Scott Sub-Menu\n";
-  // function for sub menu
-  go_back_to_main();
-}
-*/
-
 void boolean_simplifier_sub_menu() {
-  simplifyExpression();
+  booleanSimplifierSubMenu ();
 }

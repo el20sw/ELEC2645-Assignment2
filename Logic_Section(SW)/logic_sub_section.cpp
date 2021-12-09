@@ -13,20 +13,21 @@ void logic_gate_menu() {
 
 // Function to Print Logic Menu to Console
 void print_logic_menu() {
-  std::cout << "\n----- Select a Logic Gate -----\n";
-  std::cout << "|\t\t\t\t\t\t\t|\n";
-  std::cout << "|\t1. AND\t\t\t\t\t|\n";
-  std::cout << "|\t2. OR\t\t\t\t\t|\n";
-  std::cout << "|\t3. XOR\t\t\t\t\t|\n";
-  std::cout << "|\t4. NOR\t\t\t\t\t|\n";
-  std::cout << "|\t5. XNOR\t\t\t\t\t|\n";
-  std::cout << "|\t6. NOT\t\t\t\t\t|\n";
-  std::cout << "|\t7. NAND\t\t\t\t\t|\n";
-  std::cout << "|\t8. TOOLS\t\t\t\t|\n";
-  std::cout << "|\t9. Run all tests\t\t|\n";
-  std::cout << "|\t10. Exit current menu\t|\n";
-  std::cout << "|\t\t\t\t\t\t\t|\n";
-  std::cout << "-------------------------------\n";
+  std::cout << "\n>> Logic Sub-Menu\n";
+  std::cout << "\n----------- Select An Option ------------\n";
+  std::cout << "|\t\t\t\t\t\t\t\t\t\t|\n";
+  std::cout << "|\t1. AND\t\t\t\t\t\t\t\t|\n";
+  std::cout << "|\t2. OR\t\t\t\t\t\t\t\t|\n";
+  std::cout << "|\t3. XOR\t\t\t\t\t\t\t\t|\n";
+  std::cout << "|\t4. NOR\t\t\t\t\t\t\t\t|\n";
+  std::cout << "|\t5. XNOR\t\t\t\t\t\t\t\t|\n";
+  std::cout << "|\t6. NOT\t\t\t\t\t\t\t\t|\n";
+  std::cout << "|\t7. NAND\t\t\t\t\t\t\t\t|\n";
+  std::cout << "|\t8. TOOLS\t\t\t\t\t\t\t|\n";
+  std::cout << "|\t9. Run All Tests\t\t\t\t\t|\n";
+  std::cout << "|\t10. Return to Main Menu\t\t\t\t|\n";
+  std::cout << "|\t\t\t\t\t\t\t\t\t\t|\n";
+  std::cout << "-----------------------------------------\n";
 }
 
 // Function to get user menu selection - LOGIC main
@@ -184,13 +185,14 @@ void menu_TESTS() {
 
 // Function to print TOOLS sub-menu
 void print_tools_menu() {
-  std::cout << "\n------ Select a Logic Tool ------\n";
-  std::cout << "|\t\t\t\t\t\t\t\t|\n";
-  std::cout << "|\t1. Half-Adder\t\t\t\t|\n";
-  std::cout << "|\t2. Full-Adder\t\t\t\t|\n";
-  std::cout << "|\t3. Exit current menu\t\t|\n";
-  std::cout << "|\t\t\t\t\t\t\t\t|\n";
-  std::cout << "---------------------------------\n";
+  std::cout << "\n>> Tools Sub-Menu\n";
+  std::cout << "\n----------- Select An Option ------------\n";
+  std::cout << "|\t\t\t\t\t\t\t\t\t\t|\n";
+  std::cout << "|\t1. Half-Adder\t\t\t\t\t\t|\n";
+  std::cout << "|\t2. Full-Adder\t\t\t\t\t\t|\n";
+  std::cout << "|\t3. Return to Logic Sub-Menu\t\t\t|\n";
+  std::cout << "|\t\t\t\t\t\t\t\t\t\t|\n";
+  std::cout << "-----------------------------------------\n";
 }
 
 // Function to get user menu selection - TOOLS sub-menu

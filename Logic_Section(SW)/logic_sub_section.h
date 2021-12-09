@@ -4,7 +4,7 @@
 #include <iostream>
 #include <regex>
 
-#include "../headers/common.h"
+#include "../Headers/common.h"
 #include "LOGIC.h"
 #include "TOOLS.h"
 #include "testing.h"
